@@ -18,7 +18,8 @@ const DownloadForm = () => {
         setVideoData(null);
 
         try {
-            const response = await fetch('http://localhost:3000/api/download/info', {
+            const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000';
+            const response = await fetch(`${apiBaseUrl}/api/download/info`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -17,7 +17,8 @@ const VideoResult = ({ videoData, originalUrl }) => {
         setAudioLoading(true);
         setAudioError(null);
         try {
-            const response = await fetch('http://localhost:3000/api/download/audio', {
+            const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000';
+            const response = await fetch(`${apiBaseUrl}/api/download/audio`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ url: originalUrl }),
