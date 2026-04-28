@@ -4,6 +4,22 @@ const morgan = require("morgan");
 const helmet = require("helmet");
 const dotenv = require('dotenv');
 const downloadRoutes = require("./routes/download.routes.js");
+const YTDlpWrap = require("yt-dlp-wrap").default;
+const path = require("path");
+const fs = require("fs");
+
+const YT_DLP_PATH = path.join(__dirname, 'yt-dlp');
+
+const initYtDlp = async () => {
+  // Only download if binary doesn't already exist
+  if (!fs.existsSync(YT_DLP_PATH)) {
+    console.log('yt-dlp binary not found - downloading ...');
+    await YTDlpWrap.downloadFromGithub(YT_DLP_PATH);
+    console.log("yt-dlp downloaded successfully");
+  } else {
+    console.log("yt-dlp binary already exists - skipping download");
+  }
+}
 
 dotenv.config();
 
@@ -38,6 +54,14 @@ app.use((err, req, res, next) => {
 }
   );
 
+const startServer = async () => {
+
+  await initYtDlp();
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+}
+
+startServer();
+
+
