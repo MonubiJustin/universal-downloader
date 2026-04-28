@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "prestart": "pip install -U yt-dlp || pip3 install -U yt-dlp",
     "dev": "nodemon src/app.js",
     "start": "node src/app.js"
   },

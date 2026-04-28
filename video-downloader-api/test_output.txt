@@ -1,25 +1,0 @@
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    54    0     0  100    54      0    236 --:--:-- --:--:-- --:--:--   235100    54    0     0  100    54      0     43  0:00:01  0:00:01 --:--:--    43100    54    0     0  100    54      0     24  0:00:02  0:00:02 --:--:--    24100    54    0     0  100    54      0     16  0:00:03  0:00:03 --:--:--    16100    54    0     0  100    54      0     12  0:00:04  0:00:04 --:--:--    12100    54    0     0  100    54      0     10  0:00:05  0:00:05 --:--:--     0100    54    0     0  100    54      0      8  0:00:06  0:00:06 --:--:--     0100  1409  100  1355  100    54    198      7  0:00:07  0:00:06  0:00:01   294
-HTTP/1.1 200 OK
-Content-Security-Policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
-Cross-Origin-Opener-Policy: same-origin
-Cross-Origin-Resource-Policy: same-origin
-Origin-Agent-Cluster: ?1
-Referrer-Policy: no-referrer
-Strict-Transport-Security: max-age=31536000; includeSubDomains
-X-Content-Type-Options: nosniff
-X-DNS-Prefetch-Control: off
-X-Download-Options: noopen
-X-Frame-Options: SAMEORIGIN
-X-Permitted-Cross-Domain-Policies: none
-X-XSS-Protection: 0
-Access-Control-Allow-Origin: *
-Content-Type: application/json; charset=utf-8
-Content-Length: 1355
-ETag: W/"54b-qcE81OiWoWypXvsfYDTiNP7lLT4"
-Date: Sat, 18 Apr 2026 17:33:56 GMT
-Connection: keep-alive
-Keep-Alive: timeout=5
-
-{"title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster)","platform":"youtube","uploader":"Rick Astley","duration":213,"thumbnail":"https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg","downloadUrl":"https://rr4---sn-ap90pquxaxjvh-ocvs.googlevideo.com/videoplayback?expire=1776555235&ei=g8Djaan3L8OI6dsP756_sQ8&ip=41.220.233.110&id=o-AGeqUsXjsMUPV09doN7lAsYlfsCtjttq1QUz7rJ8XSjc&itag=401&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1188&met=1776533635%2C&mh=7c&mm=31%2C29&mn=sn-ap90pquxaxjvh-ocvs%2Csn-woc7kned&ms=au%2Crdu&mv=m&mvi=4&pl=24&rms=au%2Cau&initcwndbps=377500&bui=AUUZDGJIKQwUMADKpa7L_W2AeDihRbZE-tAJP_jKYo34OTl5OHokSrVBBM1rFmYGaOjo4VYYoen1mdsH&spc=jlWavYTjypHde3OLWrbfKepPf7a7n-2VXVLcriVZFYtdJRC70w&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=240334643&dur=213.040&lmt=1766961226342025&mt=1776533367&fvip=4&keepalive=yes&fexp=51565115%2C51565682&c=ANDROID_VR&txp=5532534&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AHEqNM4wRgIhANsKkKr1Xu6F51K_HiKfTlgYTu35WADTgP594066ddtAAiEAwmEel4ecPbo-7R4Ipo6rOc9qt2V9WMAnORLyy-COl1s%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRQIhAI877_OUjIOVxUDzNEBRgVYMSDUfQTPjgRLdWtO3Q-7sAiB9jqIzoifzrBJuXpaDmcU-e37ba7L5CMcWhq_HYFNbMA%3D%3D"}
