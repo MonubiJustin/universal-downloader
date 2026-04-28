@@ -4,12 +4,19 @@ const YTDlpWrap = require("yt-dlp-wrap").default;
 const ytDlp = new YTDlpWrap("yt-dlp");
 
 const getVideoInfo = async (url) => {
-  const metadata = await ytDlp.getVideoInfo(url);
-  const formats = metadata.formats || [];
+  const parsed = await ytDlp.execPromise([
+    url,
+    '--cookies', process.env.COOKIES_PATH,
+    '--dump-json',
+    '--no-playlist'
+  ]);
+  const metadata = JSON.parse(parsed);
+
+  const formats = parsed.formats || [];
   let bestVideo = null;
 
   // HANDLE YOUTUBE DOWNLOADS
-  if (metadata.extractor == "youtube") {
+  if (parsed.extractor == "youtube") {
     bestVideo = formats
       .filter(f => f.ext === "mp4" && f.url && f.acodec != "none")
       .sort((a, b) => (b.height || 0) - (a.height || 0))[0];
@@ -24,11 +31,11 @@ const getVideoInfo = async (url) => {
   // console.log(bestVideo);
 
   return {
-    title: metadata.title,
-    platform: metadata.extractor,
-    uploader: metadata.uploader,
-    duration: metadata.duration,
-    thumbnail: metadata.thumbnail,
+    title: parsed.title,
+    platform: parsed.extractor,
+    uploader: parsed.uploader,
+    duration: parsed.duration,
+    thumbnail: parsed.thumbnail,
     downloadUrl: bestVideo?.url || null,
     quality: bestVideo?.height ? `${bestVideo.height}p` : null,
   };
