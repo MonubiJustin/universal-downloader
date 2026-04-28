@@ -6,7 +6,7 @@
   "scripts": {
     "prestart": "pip install -U yt-dlp  --break-system-packages || pip3 install -U yt-dlp  --break-system-packages",
     "dev": "nodemon src/app.js",
-    "start": "node src/app.js"
+    "start": "PATH=$PATH:/opt/render/.local/bin node src/app.js"
   },
   "keywords": [],
   "author": "",
