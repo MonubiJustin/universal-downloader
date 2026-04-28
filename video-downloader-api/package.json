@@ -4,10 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "prestart": "pip install -U yt-dlp  --break-system-packages || pip3 install -U yt-dlp  --break-system-packages",
-    "dev": "nodemon src/app.js",
-    "start": "PATH=$PATH:/opt/render/.local/bin node src/app.js"
-  },
+  "prestart": "pip install -U yt-dlp --break-system-packages && curl -fsSL https://deno.land/install.sh | sh && mkdir -p /tmp && cp /etc/secrets/cookies.txt /tmp/cookies.txt || true",
+  "start": "PATH=$PATH:/opt/render/.local/bin:$HOME/.deno/bin node src/app.js",
+  "dev": "nodemon src/app.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
