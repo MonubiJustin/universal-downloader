@@ -1,0 +1,75 @@
+{
+  "name": "mpaps-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch --import ./src/instrumentation/instrumentation.ts src/server.ts",
+    "build": "bun build src/server.ts src/instrumentation/instrumentation.ts --outdir dist --target=bun --packages=external --root src",
+    "start": "bun --import ./dist/instrumentation/instrumentation.js ./dist/server.js",
+    "check": "tsc --noEMit",
+    "test": "vitest --watch",
+    "lint": "eslint . --max-warnings=0",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky",
+    "db:generate": "bunx drizzle-kit generate",
+    "db:migrate": "bunx drizzle-kit migrate"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@opentelemetry/api": "^1.9.1",
+    "@opentelemetry/auto-instrumentations-node": "^0.81.0",
+    "@opentelemetry/exporter-metrics-otlp-proto": "^0.223.0",
+    "@opentelemetry/exporter-trace-otlp-proto": "^0.223.0",
+    "@opentelemetry/resources": "^2.12.0",
+    "@opentelemetry/sdk-metrics": "^2.12.0",
+    "@opentelemetry/sdk-node": "^0.223.0",
+    "@opentelemetry/sdk-trace-node": "^2.12.0",
+    "cors": "^2.8.6",
+    "drizzle-orm": "^0.45.4",
+    "express": "^5.2.1",
+    "pino": "^10.3.1",
+    "pino-http": "^11.0.0",
+    "postgres": "^3.4.9",
+    "youtube-dl-exec": "^3.1.19",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@tsconfig/node22": "^22.0.5",
+    "@types/bun": "^1.3.14",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "drizzle-kit": "^0.31.11",
+    "eslint": "^10.10.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-simple-import-sort": "^14.0.0",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.5.0",
+    "pino-pretty": "^13.1.3",
+    "prettier": "^3.9.6",
+    "supertest": "^7.2.2",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.69.0",
+    "vitest": "^4.1.10"
+  },
+  "trustedDependencies": [
+    "youtube-dl-exec"
+  ]
+}
